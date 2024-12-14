@@ -20,7 +20,7 @@
 
 2. 镜像选择：使用社区镜像，搜索blender，选择该镜像。创建服务器即可，启动服务器后可以直接开始上传你的Blender工程到autodl-tmp文件夹下的render_files文件夹中，上传的路径没有强制要求。
    
-   <img title="" src="./images/chrome_cApsbZtnAk.png" alt="chrome_cApsbZtnAk.png" width="381">
+   <img title="" src="./images/chrome_cApsbZtnAk.png" alt="chrome_cApsbZtnAk.png" width="614">
 
 3. 使用镜像创建的服务器无需进行环境配置，直接运行渲染指令即可，运行前一定要更改渲染命令，关于渲染命令的含义可以查询Blender官方手册的[命令行渲染部分](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)。
 
