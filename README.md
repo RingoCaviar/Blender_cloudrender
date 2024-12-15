@@ -1,5 +1,11 @@
 # Blender_cloudrender
 
+## 更新
+
+### v2.2
+
+- 自带两个Blender文件和渲染这两个文件的脚本，可以直接测试
+
 ## 作用
 
 在AutoDL等服务器上快捷部署Blender进行渲染
