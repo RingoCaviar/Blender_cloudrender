@@ -4,11 +4,11 @@
 
 ### v2.2
 
-- 自带两个Blender文件和渲染这两个文件的脚本，可以直接测试
+🟢自带两个Blender文件和渲染这两个文件的脚本，可以直接测试
 
 ## 作用
 
-在AutoDL等服务器上快捷部署Blender进行渲染
+🟢在AutoDL等服务器上快捷部署Blender进行渲染
 
 ## 什么人需要它？
 
@@ -18,7 +18,7 @@
 
 ## 如何使用它？
 
-下载<mark>一键部署Blender.ipynb</mark>文件上传到新建好的服务器中，双击打开按照提示依次运行命令即可
+下载<font color=green>**一键部署Blender.ipynb**</font>文件上传到新建好的服务器中，双击打开按照提示依次运行命令即可
 
 ## AutoDL服务器创建指南：
 
@@ -26,8 +26,8 @@
 
 2. 镜像选择：使用社区镜像，搜索blender，选择该镜像。创建服务器即可，启动服务器后可以直接开始上传你的Blender工程到autodl-tmp文件夹下的render_files文件夹中，上传的路径没有强制要求。
    
-   <img title="" src="./images/chrome_cApsbZtnAk.png" alt="chrome_cApsbZtnAk.png" width="614">
+   <img title="" src="images/chrome_cApsbZtnAk.png" alt="chrome_cApsbZtnAk.png" width="614">
 
 3. 使用镜像创建的服务器无需进行环境配置，直接运行渲染指令即可，运行前一定要更改渲染命令，关于渲染命令的含义可以查询Blender官方手册的[命令行渲染部分](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)。
 
-###### 此脚本仅有<u>辅助作用</u>，linux基础命令需要掌握一些，比如cd命令。blender命令行渲染的相关参数在[官方手册](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)中查询。
+###### ❗❗❗此脚本仅有<u>辅助作用</u>，linux基础命令需要掌握一些，比如cd命令。blender命令行渲染的相关参数在[官方手册](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)中查询。
