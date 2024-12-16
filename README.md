@@ -30,4 +30,4 @@
 
 3. 使用镜像创建的服务器无需进行环境配置，直接运行渲染指令即可，运行前一定要更改渲染命令，关于渲染命令的含义可以查询Blender官方手册的[命令行渲染部分](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)。
 
-###### ❗❗❗此脚本仅有<u>辅助作用</u>，linux基础命令需要掌握一些，比如cd命令。blender命令行渲染的相关参数在[官方手册](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)中查询。
+###### ❗❗❗此脚本仅有<u><font color=#FFC0CB>辅助作用</font></u>，linux基础命令需要掌握一些，比如cd命令。blender命令行渲染的相关参数在[官方手册](https://docs.blender.org/manual/zh-hans/4.2/advanced/command_line/arguments.html#command-line-arguments)中查询。
