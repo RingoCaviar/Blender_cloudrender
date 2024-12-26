@@ -1,0 +1,1 @@
+start "" "%appdata%\io.github.clash-verge-rev.clash-verge-rev\profiles"
