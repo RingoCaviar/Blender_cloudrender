@@ -185,7 +185,7 @@ ruleProviders.set('applications', {
 })
 
 const rules = [
-  'RULE-SET,applications,下载软件',
+  // 'RULE-SET,applications,下载软件',
   'PROCESS-NAME,SunloginClient,DIRECT',
   'PROCESS-NAME,SunloginClient.exe,DIRECT',
   'DOMAIN-SUFFIX,iiicg.com,DIRECT',
