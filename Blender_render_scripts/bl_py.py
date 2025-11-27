@@ -1,56 +1,48 @@
 import subprocess
-import sys
 import os
+import platform
 
-my_env = os.environ.copy()
-my_env["PYTHONIOENCODING"] = "utf-8"
+# ================= 配置区域 (修改这里) =================
+# 获取脚本 当前 路径
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# 设置 工程文件 名
+BLEND_FILE = "shot4.blend"
+# 生成 工程文件 绝对路径
+blend_file_path = os.path.join(script_dir, "shot4.blend")
+# 输出文件名
+OUTPUT_NAME = "babala"
+# 生成 输出文件 绝对路径 默认放在脚本路径内的output文件夹中
+output_path = os.path.join(script_dir, "output", OUTPUT_NAME)
 
-BL_path        = r"D:\ProgramFiles\blender-5.0.0-windows-x64\blender.exe"
-out_path       = r"D:/cache/renderoutput_test"
-render_file    = r"D:\Work\2025.11.17.杨斌.西林瓶\西林瓶建模_002.blend"
-cy_device      = "OPTIX"
-override_scripts = r"D:\cache\blender render test\setting.py"
+# 帧数范围
+START = 500
+END = 513
 
-scene_list = [
-    "密封10ml_pose01",
-    "密封10ml_pose02",
-]
+GPU_SCRIPT = "setting.py"
+setting_path = os.path.join(script_dir, GPU_SCRIPT)
 
-def run_and_decode(cmd, env):
-    # 启动进程，把输出流截获 (stdout=subprocess.PIPE)
-    p = subprocess.Popen(
-        cmd, 
-        stdout=subprocess.PIPE, 
-        stderr=subprocess.STDOUT, # 把错误信息也合并进来
-        env=env
-    )
-    
-    # 循环读取每一行
-    while True:
-        # 这里的 line 是字节流 (bytes)，不是字符串
-        line = p.stdout.readline()
-        if not line and p.poll() is not None:
-            break
-            
-        if line:
-            # === 这里的逻辑是关键 ===
-            # Blender 发送过来的是 UTF-8 字节，我们必须用 utf-8 解码变成 Unicode 字符串
-            # 这里的 strip() 是去掉末尾换行符
-            text_str = line.decode('utf-8', errors='ignore').strip()
-            
-            # 直接 print，Python 会自动负责把它编码成 CMD 能看懂的格式 (GBK)
-            print(text_str)
+# Blender主程序目录
+BLENDER_CMD = r"D:\ProgramFiles\blender-5.0.0-windows-x64\blender.exe" 
+# ======================================================
 
-for s in scene_list:
+def render():
+    # 构建命令列表
     cmd = [
-        BL_path,
-        "-b",
+        BLENDER_CMD,           # Blender 命令
+        "-b", blend_file_path,      # 后台模式 + 文件路径
         "--factory-startup",
-        render_file,
-        "-S", s,
-        "-o", rf"{out_path}\{s}.png",
-        "-P", override_scripts,
-        "-f", "1",
-        "--", "--cycles-device", cy_device,
+        "-P", setting_path,      # 关键：加载 GPU 设置脚本
+        "-s", str(START),      # 起始帧
+        "-e", str(END),        # 结束帧
+        "-o", output_path, 
+        "-a"                   # 执行动画渲染 (Animation)
     ]
-    run_and_decode(cmd, my_env)
+    
+    # 打印一下命令方便检查 (Windows和Linux通用)
+    print(f"正在启动: {' '.join(cmd)}")
+    
+    # 执行命令 (shell=False 更安全，且自动处理路径空格)
+    subprocess.run(cmd)
+
+if __name__ == "__main__":
+    render()

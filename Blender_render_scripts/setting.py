@@ -44,12 +44,12 @@ force_enable_gpu('OPTIX')
 
 # 2. 再设置场景参数
 scene = bpy.context.scene
-scene.cycles.device = 'GPU'            # 告诉场景使用 GPU 设备
-scene.cycles.samples = 4             # 采样率
+# scene.cycles.device = 'GPU'            # 告诉场景使用 GPU 设备
+# scene.cycles.samples = 4             # 采样率
 
 # 3. 设置降噪 (必须配合上面的 OPTIX)
-scene.cycles.use_denoising = True      # 开启降噪
-scene.cycles.denoiser = 'OPTIX'        # 强制使用 OptiX 降噪器
+# scene.cycles.use_denoising = True      # 开启降噪
+# scene.cycles.denoiser = 'OPTIX'        # 强制使用 OptiX 降噪器
 # scene.cycles.denoising_input_passes = 'RGB_ALBEDO_NORMAL' # (可选) 设置降噪输入通道
 
 print(">>> 场景参数已应用。")
