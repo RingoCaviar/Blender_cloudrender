@@ -10,17 +10,13 @@
 
 🟢推荐把东西都打包到一个文件夹中，你上传的文件夹应该是这个结构👇
 
-📂文件夹（最好是英文）
-
-​		工程.blend（最好是英文）
-
-​		tex
-
-​		一键部署Blender.ipynb
-
-​		bl_py.py
-
-​		setting.py
+```
+📦Blender_render_scripts(可以改名)
+ ┣ 📜bl_py.py
+ ┣ 📜setting.py
+ ┣ 📜你的工程.blend(可以改名)
+ ┗ 📜一键部署Blender.ipynb
+```
 
 🟢setting.py脚本的作用：将Blender设置为显卡渲染。因为服务器刚下载的Blender默认是CPU渲染，必须用脚本改一下首选项的设置，否则合成器还是用CPU，降噪也是CPU，速度极慢。  
 
