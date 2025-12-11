@@ -28,6 +28,16 @@
  ┗ 📜一键部署Blender.ipynb
 ```
 
+## 已知问题
+
+使用30系显卡貌似会出现报错，内容为:**ERROR Failed to load OptiX kernel from '/root/blender-5.0.0-linux-x64/5.0/scripts/addons_core/cycles/lib/kernel_optix.ptx.zst' (OPTIX_ERROR_INTERNAL_COMPILER_ERROR)**
+
+看起来是编译内核的问题，但是不清楚为什么发生以及不清楚如何解决
+
+cuda toolkit也是装了的，很奇怪
+
+目前貌似是只能用40系和50系显卡渲染
+
 ## 作用💪
 
 在AutoDL等服务器上快捷部署Blender进行渲染
